@@ -60,6 +60,9 @@ class ViewController: UIViewController {
             // If failed, just print the err
             print(err.debugDescription)
         }
+        
+        // Reset the counter to 0 on init
+        outputLbl.text = "0"
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,6 +109,9 @@ class ViewController: UIViewController {
     
     // Function to solve the operations
     func processOperation(operation: Operation) {
+        // Play sound
+        playSound()
+        
         // Make sure operation is not empty
         if currentOperation != Operation.Empty {
             
